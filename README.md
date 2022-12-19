@@ -1,3 +1,3 @@
 # PortfolioProjects
-A complete beginner who's learning about Data analytics 
-This is a project which focuses upon covid dataset
+A complete beginner who's learning  more about data analytics 
+
