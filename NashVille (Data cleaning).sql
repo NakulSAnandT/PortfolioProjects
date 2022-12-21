@@ -18,7 +18,7 @@
     UPDATE Project104..[Nashville ]
     set SaleDateNew = CONVERT(Date,SaleDate)
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 2) Formatting Property by Populating
  
     Select PropertyAddress from
@@ -42,7 +42,7 @@
     on a.ParcelID=b.ParcelID
     and a.[UniqueID ]<>b.[UniqueID ]
     where a.PropertyAddress is null
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 --  3) SPLITTING A COLUMN
 
     select SUBSTRING(PropertyAddress, 1, CHARINDEX(',',PropertyAddress) -1) as addresss
@@ -62,7 +62,7 @@
 
     Update [Nashville ]
     set PSCity = SUBSTRING(PropertyAddress, CHARINDEX(',',PropertyAddress) +1,LEN(PropertyAddress))
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 4) SPLITTING COLUMN 'OWNERADRRESS' INTO 
 
     select
@@ -90,7 +90,7 @@
 
     UPDATE [Nashville ]
     set OSState = PARSENAME(REPLACE(OwnerAddress,',','.'),3)
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 5) CHANGING Y/N TO YES/NO
 
     SELECT DISTINCT(SoldAsVacant),Count(SoldAsVacant)
@@ -115,7 +115,7 @@
 	      END
 	    from Project104..[Nashville ]
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 6) REMOVING DUPLICATES
 
 WITH ROWNUMCTE AS (
@@ -133,7 +133,7 @@ WITH ROWNUMCTE AS (
 DELETE from ROWNUMCTE 
 WHERE ROW_NUM > 1
 --ORDER BY PropertyAddress
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Checking for more duplicate
 
 WITH ROWNUMCTE AS (
@@ -151,7 +151,7 @@ WITH ROWNUMCTE AS (
 Select * from ROWNUMCTE 
 WHERE ROW_NUM > 1
 ORDER BY PropertyAddress
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 7) DELETING IRRELEVANT DATA
 
     ALTER TABLE Nashville
