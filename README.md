@@ -1,5 +1,4 @@
 # PortfolioProjects
-Data Analytics Learning Repository
 Welcome to my data analytics learning repository! Here, you will find a collection of projects that I have worked on to learn and explore more about data analytics.
 
 As a beginner in the field, these projects serve as a way for me to apply the concepts and techniques that I have learned, and to gain hands-on experience with real-world data. Each project includes a brief description of the problem or question being addressed, the data used, the techniques and tools applied, and the results and conclusions.
